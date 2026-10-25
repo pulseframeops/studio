@@ -1,3 +1,5 @@
+<img align="center" width="1672" height="941" alt="1000001338" src="https://github.com/user-attachments/assets/e3953e33-9ed3-4253-9840-06c3d8f89245" />
+
 # PulseFrame Studio Alpha 0.2.6
 
 A local-first music-visualizer / lightweight edit-background video editor, for Windows, macOS and Linux. **Experimental source build, not an installer**.
