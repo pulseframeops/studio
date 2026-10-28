@@ -27,10 +27,15 @@ test('particle movement freezes smoothly and resumes; frame-order independent',(
  assert.equal(t(1.2),t(1.2));
  assert.ok(t(2)>t(1.3));
 });
-test('New editing effects are additional options, old ones still exist',()=>{
+test('legacy transitions remain render-compatible but are hidden from new creation menu',()=>{
  const html=fs.readFileSync(path.join(dir,'src/index.html'),'utf8');
- for(const name of ['cut','fade','wipe','zoom','blur','directional','spin','echo'])assert.ok(html.includes(`value="${name}"`));
- for(const name of ['velocity','chromatic','negative','pixel'])assert.ok(html.includes(`value="${name}"`));
+ const select=html.match(/<select id="montage-transition">([\s\S]*?)<\/select>/)?.[1]||'';
+ for(const kind of ['cut','shake','spin'])assert.ok(select.includes(`value="${kind}"`));
+ for(const kind of ['fade','wipe','blur','echo','pull_in','pull_out'])assert.ok(!select.includes(`value="${kind}"`));
+ const engine=fs.readFileSync(path.join(dir,'src/render.js'),'utf8');
+ for(const kind of ['fade','wipe','blur','echo','pull_in','pull_out'])assert.ok(engine.includes(`'${kind}'`));
+ const app=fs.readFileSync(path.join(dir,'src/app.js'),'utf8');
+ assert.match(app,/Legacy \/ сохранённый:/);
 });
 test('default logo is valid bundled raster asset',()=>{
  const p=fs.readFileSync(path.join(dir,'src/assets/branding/pulseframe-system.png'));

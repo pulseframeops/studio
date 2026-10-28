@@ -20,7 +20,7 @@
     const p={...project,canvas:{...project.canvas,aspect:'9:16'},
       intro:{...project.intro,durationSec:s.intro,audioStart:'with_intro',accent:project.shorts?.introAccent||'glitch',presents:project.shorts?.introText||project.intro.presents||''},
       outro:{...project.outro,durationSec:s.outro},
-      montage:{...project.montage,musicTrim:{start:s.start,end:s.start+s.duration}},
+      montage:{...project.montage,enabled:false,musicTrim:{start:s.start,end:s.start+s.duration}},
       shorts:{...project.shorts,render:true,computed:s}
     };
     return {project:p,info:s};

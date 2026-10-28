@@ -135,3 +135,89 @@ button.nav.active,.preset.selected,.scene-button.active{background:#24202e!impor
 
 /* Alpha 0.2.6: branded header cannot be selected or dragged. */
 .brand,.brand *,.mark,.mark *{-webkit-user-select:none!important;user-select:none!important;-webkit-user-drag:none!important;}
+
+/* Alpha 0.2.7: calm motion, night theme, flexible editing workspace. */
+.settings-view{height:100%;overflow:auto;padding:45px max(25px,7vw);background:#0c0c11}
+.settings-shell{width:min(840px,100%);margin:auto}
+.settings-shell h1{margin:15px 0 8px;font-size:29px}
+.settings-row{display:flex;align-items:center;justify-content:space-between;gap:25px;border:1px solid #31303c;border-radius:12px;padding:18px 20px;margin:16px 0;background:#15151c}
+.settings-row b{display:block;margin-bottom:6px;font-size:13px}
+.settings-row small{font-size:11px}
+.settings-row select{max-width:245px}
+.settings-note{font-size:12px;margin-top:24px;color:#9393a9}
+html[data-theme="night"],html[data-theme="night"] body{background:#000!important;color:#fafafe}
+html[data-theme="night"] .topbar,html[data-theme="night"] .rail,html[data-theme="night"] .scene-panel,html[data-theme="night"] .properties,html[data-theme="night"] .wizard-footer,html[data-theme="night"] .shorts-options,html[data-theme="night"] .shorts-effects,html[data-theme="night"] .montage-import,html[data-theme="night"] .montage-work,html[data-theme="night"] .settings-row{background:#09090b!important}
+html[data-theme="night"] .work-area,html[data-theme="night"] .editor-view,html[data-theme="night"] .wizard-view,html[data-theme="night"] .montage-view,html[data-theme="night"] .shorts-view,html[data-theme="night"] .settings-view,html[data-theme="night"] .preview-region{background:#020203!important}
+html[data-theme="night"] .wizard-card,html[data-theme="night"] .prop-block,html[data-theme="night"] .timeline-region,html[data-theme="night"] .montage-timeline-head,html[data-theme="night"] .shorts-stage{background:#0b0b0e!important}
+html[data-theme="night"] input,html[data-theme="night"] select,html[data-theme="night"] textarea{background-color:#101014;border-color:#292a33}
+html[data-theme="night"] .montage-tl-clip{filter:saturate(.8)}
+.platform-choices{display:grid;grid-template-columns:1fr;gap:5px;margin-top:8px}
+.platform-choices label{display:flex;align-items:center;gap:8px;font-size:11px;padding:5px 6px;border-radius:6px;background:#17171b}
+.platform-choices img{height:19px;width:19px;object-fit:contain}
+.platform-choices input[type="checkbox"]{width:auto;accent-color:#9688fb}
+.montage-subhead{font-size:10px;letter-spacing:1.1px;color:#a7aff2;margin-top:10px}
+.montage-transform-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.montage-transform-grid label{min-width:0}
+.montage-transform-grid input{padding:7px!important;min-width:0}
+.montage-tl-clip{touch-action:none;user-select:none;will-change:left,width}
+.montage-tl-clip:before,.montage-tl-clip:after{content:"";position:absolute;top:0;bottom:0;width:8px;background:#ffffff24;pointer-events:none}
+.montage-tl-clip:before{left:0;border-right:1px solid #ffffff40}.montage-tl-clip:after{right:0;border-left:1px solid #ffffff40}
+.montage-view *, .settings-view *{scroll-behavior:auto}
+.montage-monitor canvas{image-rendering:auto}
+@media(max-width:920px){.settings-row{flex-wrap:wrap}.montage-transform-grid{grid-template-columns:1fr}}
+
+/* Alpha 0.2.7 refresh: retro theme is UI-only, not the player surface */
+.retro-version{display:none;font-family:"Press Start 2P",monospace;white-space:nowrap;flex-direction:column;width:max-content;padding:6px 9px;border:2px solid #17e4f9;box-shadow:2px 2px 0 #f84dff,0 0 12px #15d9ff88;background:#0b0a23;letter-spacing:0;text-shadow:1px 1px #e231f9;font-size:7px;gap:5px;margin-top:4px}
+.retro-version-top{color:#00e7fd}.retro-version strong{font-size:10px;color:#fff}.retro-version-bars{height:4px;background:repeating-linear-gradient(to right,#12d5fc 0px,#12d5fc 8px,#fd40e6 8px,#fd40e6 16px);}
+.retro-scene-settings{padding:10px;border:1px solid #623c92;border-radius:8px;margin:8px 0}.retro-scene-settings label{display:block;margin-bottom:9px;font-size:11px}.retro-scene-settings select,.retro-scene-settings input{max-width:100%}
+@font-face{font-family:"Press Start 2P";src:local("Press Start 2P");font-display:swap}
+html[data-retro="true"] .topbar,html[data-retro="true"] .rail,html[data-retro="true"] .scene-panel,html[data-retro="true"] .properties,html[data-retro="true"] .wizard-card,html[data-retro="true"] .settings-view,html[data-retro="true"] .montage-import,html[data-retro="true"] .montage-work,html[data-retro="true"] .shorts-options{background:#0e0926!important;border-color:#7743c1!important}
+html[data-retro="true"] .work-area,html[data-retro="true"] .wizard-view,html[data-retro="true"] .editor-view,html[data-retro="true"] .montage-view,html[data-retro="true"] .settings-view{background:#06061b!important}
+html[data-retro="true"] .rail .nav,html[data-retro="true"] .scene-panel .section-head,html[data-retro="true"] .scene-panel .preset,html[data-retro="true"] .settings-shell h1,html[data-retro="true"] .wizard-heading h1,html[data-retro="true"] .toolbar button,html[data-retro="true"] .brand b,html[data-retro="true"] .brand span{font-family:"Press Start 2P",monospace;font-size:9px;letter-spacing:0;line-height:1.8}
+html[data-retro="true"] .rail .nav{font-size:7px;border-radius:0}html[data-retro="true"] .preset{border-radius:0;border:1px solid #63389c}
+html[data-retro="true"] .regular-version{display:none}html[data-retro="true"] .retro-version{display:flex}
+html[data-retro="true"] button.primary,html[data-retro="true"] .scene-button.active{background:#501887;box-shadow:3px 3px 0 #df33bf;border-radius:2px}
+html[data-retro="true"] .preview-region,html[data-retro="true"] .canvas-box,html[data-retro="true"] .player-bar{font-family:Montserrat,system-ui,sans-serif!important;background:#050507!important}
+#retro-liquid-wipe{position:fixed;inset:-4vh 0 0;pointer-events:none;z-index:150;background:linear-gradient(180deg,#c32ec5,#613dc2,#07112f);opacity:0;transform:translateY(-108%)}
+#retro-liquid-wipe.is-leaving{animation:retroLiquid .8s ease-in-out forwards;clip-path:polygon(0 0,100% 0,100% 89%,94% 95%,87% 88%,78% 97%,69% 90%,60% 98%,48% 92%,39% 97%,31% 90%,20% 96%,12% 90%,0 96%)}
+@keyframes retroLiquid{0%{opacity:.85;transform:translateY(-105%)}42%{opacity:.8;transform:translateY(-25%)}100%{opacity:0;transform:translateY(110%)}}
+.kofi-support-link{display:block;width:min(430px,100%);padding:14px;border:1px solid #364ed1;border-radius:12px;background:#070712;text-align:center;margin:16px auto}
+.kofi-support-link img{width:100%;max-height:125px;object-fit:contain;display:block}
+.starfall-view{height:100%;min-width:0;overflow:auto;background:radial-gradient(ellipse at 50% 65%,#24274d,#020713 75%);padding:20px 35px;color:#e6ecff}
+.starfall-header h1{font-size:28px;margin:8px 0}.starfall-header p{color:#bac4df;font-size:12px;max-width:690px;line-height:1.7}
+.starfall-board{position:relative;margin-top:18px;width:min(100%,1060px);border:1px solid #485586;box-shadow:0 6px 35px #0008;border-radius:14px;overflow:hidden;background:#071329}
+.starfall-board canvas{width:100%;aspect-ratio:1000/560;display:block;cursor:crosshair}
+.starfall-hud{position:absolute;inset:12px 12px auto;display:flex;gap:12px;align-items:center;pointer-events:none;color:#dbe5fe;text-shadow:0 2px 5px #000;font-weight:bold;font-size:14px}
+.starfall-hud span{padding:7px 10px;background:#050a17aa;border-radius:8px}.starfall-hud button{pointer-events:auto;margin-left:auto;background:#182446bb;color:#e3ecff;border-radius:6px;border:1px solid #5c6890;padding:8px 12px}
+.starfall-secret{position:absolute;inset:0;background:#010207dd;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.starfall-code{font-family:"Press Start 2P",monospace;color:#82ddff;font-size:clamp(24px,6vw,75px);text-shadow:0 0 18px #64c0ed;animation:retroFlash .55s ease both}
+.starfall-result{text-align:center;font-size:33px;color:#e9eeff;animation:retroFlash .7s ease both}
+.starfall-result small{display:block;font-size:15px;margin-top:18px;color:#a4bdff}
+.starfall-hint{font-size:11px;color:#a2b2da}
+@keyframes retroFlash{from{opacity:0;filter:blur(15px);transform:scale(1.4)}to{opacity:1;filter:blur(0);transform:scale(1)}}
+html[data-app-fullscreen="true"] .topbar{transition:height .32s ease}
+
+/* Retro uses no version plaque, while normal themes keep the alpha badge. */
+html[data-retro="true"] .regular-version, html[data-retro="true"] .retro-version {display:none!important;}
+.retro-version {display:none!important;}
+/* Keep the logo artwork freestanding instead of a dark square/tile. */
+.brand .mark {background:transparent!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important;}
+.brand .mark img {display:block;object-fit:contain;max-width:100%;max-height:100%;}
+
+/* Retro Deluxe: keep the native player readable while changing the shell. */
+.retro-scene-caption{color:#a4c4f1;line-height:1.6;font-size:10px;margin:8px 0 0}
+html[data-retro="true"] .rail .nav:not(.active) {background:#0e0b29;image-rendering:pixelated}
+html[data-retro="true"] .nav-icon,html[data-retro="true"] .ui-icon{image-rendering:pixelated}
+html[data-retro="true"] .scene-panel,html[data-retro="true"] .properties{box-shadow:inset 0 0 24px #9537d622}
+.starfall-rules{position:absolute;inset:0;display:grid;place-items:center;background:#040817d9;z-index:5;padding:18px}
+.starfall-rules-card{background:linear-gradient(155deg,#111a38,#201537);border:1px solid #6481b5;box-shadow:0 20px 70px #0009,0 0 45px #7956da33;border-radius:15px;padding:26px;width:min(500px,95%);text-align:center}
+.starfall-rules-card h2{font-size:25px;margin:10px 0}.starfall-rules-card p{font-size:12px;color:#c6d2e8;line-height:1.65}
+.starfall-rule-row{display:flex;justify-content:space-between;gap:15px;text-align:left;margin:9px 0;padding:10px;border:1px solid #455477;border-radius:6px;background:#131c37;font-size:11px}
+.starfall-rule-row b{color:#ffd08e}.starfall-rules-card .starfall-tiny{font-size:10px;opacity:.7}
+.starfall-rules-card button{margin-top:12px;padding:12px 30px}
+html[data-retro="true"] .starfall-view{background:#090621;image-rendering:pixelated}
+html[data-retro="true"] .starfall-board canvas{image-rendering:pixelated}
+html[data-retro="true"] .starfall-rules-card{font-family:"Press Start 2P",monospace;border-radius:0;box-shadow:7px 7px 0 #fb4fe1;font-size:10px}
+html[data-retro="true"] .starfall-rules-card h2{font-size:15px;line-height:1.9}
+html[data-retro="true"] .starfall-rules-card p{font-size:10px}
+@media (max-width:700px){.starfall-rule-row{flex-direction:column;gap:5px}.starfall-rules-card{padding:15px}}

@@ -1,3 +1,17 @@
+## Retro TV & Pulsy Runner (Alpha 0.2.8)
+
+Select the Retro preset for an independent TV intro/outro. Configure the TV reveal (1–4 s), ending style (YouTube recommendation placeholders or listening platforms), and custom captions in the Retro options. Outro duration defaults to 10 s. Clickable YouTube end-screen elements must be added separately in YouTube Studio.
+
+After completing both Starfall stages, the `plsframe` secret opens Pulsy Runner: three original stages, a sprite-based mascot, enemies, rings, checkpoints, double jumps and dash. A/D or arrow keys to move, Space to jump, Shift to dash, R to restart, M to mute. The three looping soundtracks work offline.
+
+## Retro Deluxe / Starfall
+
+Choose Retro and try the animated **Outrun Highway** or **Speed Platformer** scenes. Beach, mountains, room and space scenes also feature movement. Platform icons are pixelated in Retro only.
+
+Starfall starts with a rules screen. Catch 5 regular and 2 gold stars at night, then catch 5 gold and 5 diamond stars at sunrise. Gold drop chance: 45%. Secret keyboard combinations unlock after both stages.
+
+For app fullscreen, the 15-second timer begins with the first `f` and must finish with `fullscreen` or `flscrn` outside text fields.
+
 # PulseFrame Studio Alpha 0.2.5 · English user guide
 
 ## Getting started
@@ -44,3 +58,17 @@ Electron MP4 export on an end-user Windows installation has not been confirmed i
 The Shorts background references the selected original-song timestamp, including during intro and outro. Independent background zoom and pan controls fill the vertical frame without changing cover placement. New Montagem transitions and FX are additive, so previously saved transitions remain intact.
 
 The default system watermark is now the author's PulseFrame PNG artwork. MP4 exports offer faster JPEG 98% intermediate frames or lossless PNG frames for fidelity. Both use H.264 video output.
+
+
+### Alpha 0.2.7 changes
+
+Teasers use cover art/custom still imagery instead of Montage edit footage. In Montage Editor, drag clips to reposition; drag clip edges to trim; drag within the preview to reposition the image or use the mouse wheel to zoom. New transitions: Cut, Pull In, Pull Out, Shake, Spin. Legacy transitions remain compatible with saved project files. The Settings tab contains language and theme. Platform logos can be selected individually.
+
+
+## Alpha 0.2.7 refresh
+
+New Retro video preset (city, beach, mountains, room, space), pixel-style application chrome with optional CRT, updated branding, a Starfall easter egg, Ko-fi support panel, reliable Ctrl+B capture, safer timeline trim boundaries, and punchier beats. Use `fullscreen` or `flscrn` outside editable fields within 15 seconds; Esc exits preview fullscreen before application fullscreen. Pull In/Out are no longer available for new edits, but remain compatible with legacy projects.
+
+**Hardware guidance:** minimum 4 GB RAM, 2-core CPU, adequate graphics driver and disk space; recommended 8–16 GB RAM, newer 4–6-core CPU and SSD. More footage layers require more resources.
+
+Конечно, и на 4 гигах ОЗУ потянет, но с Пентиумом... соболезную... (пособолезнуйте мне тоже).

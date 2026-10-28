@@ -15,6 +15,8 @@ contextBridge.exposeInMainWorld('pulseDesktop', Object.freeze({
   openExternal: (url) => ipcRenderer.invoke('system:open-external', url),
   setWindowDirty: (dirty) => ipcRenderer.send('app:dirty', !!dirty),
   finishClose: () => ipcRenderer.invoke('app:finish-close'),
+  setAppFullscreen: enabled => ipcRenderer.invoke('app:set-fullscreen', !!enabled),
+  appVersion: () => ipcRenderer.invoke('app:version'),
   onSaveAndClose: (callback) => {
     const handler = () => callback();
     ipcRenderer.on('app:save-and-close', handler);

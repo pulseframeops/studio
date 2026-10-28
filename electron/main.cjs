@@ -48,7 +48,7 @@ function createWindow() {
   Menu?.setApplicationMenu?.(null); // Hide File / Edit / View, compatible with mocked Electron tests.
   window = new BrowserWindow({
     width: 1500, height: 920, minWidth: 980, minHeight: 680,
-    title: 'PulseFrame Studio', backgroundColor: '#050506',
+    title: 'PulseFrame Studio', backgroundColor: '#050506', icon:process.platform==='win32'?path.join(__dirname,'pulseframe.ico'):path.join(__dirname,'..','src','assets','branding','pulseframe-app.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       contextIsolation: true, sandbox: true, nodeIntegration: false,
@@ -117,6 +117,13 @@ app.whenReady().then(() => {
 });
 ipcMain.on('app:dirty', (event, dirty) => {
   if (window && event.sender === window.webContents) projectDirty = !!dirty;
+});
+ipcMain.handle('app:version',()=>app.getVersion());
+ipcMain.handle('app:set-fullscreen', (event, enabled) => {
+  if (!window || event.sender !== window.webContents) return false;
+  if (sessions.size) return window.isFullScreen();
+  window.setFullScreen(!!enabled);
+  return window.isFullScreen();
 });
 ipcMain.handle('app:finish-close', (event) => {
   if (!window || event.sender !== window.webContents) return false;
@@ -308,7 +315,7 @@ ipcMain.handle('export:cancel', async (_ev, id) => {
   return true;
 });
 ipcMain.handle('system:open-external', async (_ev, url) => {
-  if(!['https://fonts.google.com/specimen/Montserrat','https://ffmpeg.org/legal.html'].includes(url))throw Error('Ссылка не разрешена');
+  if(!['https://fonts.google.com/specimen/Montserrat','https://fonts.google.com/specimen/Press+Start+2P','https://ffmpeg.org/legal.html','https://ko-fi.com/tihsmile','https://t.me/PulseFrameOpS','https://x.com/pulseframeops','https://github.com/pulseframeops/studio'].includes(url))throw Error('Ссылка не разрешена');
   await shell.openExternal(url);return true;
 });
 ipcMain.handle('system:reveal', (_ev, filename) => shell.showItemInFolder(filename));

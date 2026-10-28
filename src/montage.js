@@ -69,7 +69,7 @@
     const state=resolve(project,sceneTime);
     if(!state)return null;
     const c=state.clip,kind=c.transition||'cut';
-    if(kind==='cut'||state.clipTime>=clamp(Number(c.transitionDuration)||.4,.15,1.5))return null;
+    if(kind==='cut'||state.clipTime>=clamp(Number(c.transitionDuration)||.25,.1,1.5))return null;
     const seq=cutSequence(project);
     const primaries=clipsOf(project).filter(x=>x.role!=='cut');
     let previous=null;
@@ -83,7 +83,7 @@
       if(index>0)previous=primaries[index-1];
     }
     if(!previous||previous.id===c.id)return null;
-    const progress=clamp(state.clipTime/clamp(Number(c.transitionDuration)||.4,.15,1.5),0,1);
+    const progress=clamp(state.clipTime/clamp(Number(c.transitionDuration)||.25,.1,1.5),0,1);
     return {kind,previous,progress,previousSourceTime:Math.max(0,(Number(previous.sourceIn)||0)+Math.max(0,Number(previous.duration)-.08))};
   }
   return {clipsOf,cutSequence,cycleDuration,resolve,transition};
